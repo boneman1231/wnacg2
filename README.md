@@ -1,1 +1,1 @@
-科技始終來自於人性
+Technology comes from human nature.
