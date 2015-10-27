@@ -15,9 +15,13 @@ import org.redcenter.wnacg.download.QueueItem;
 
 public class WacgnParser implements Parser {
 	private static final String WEBSITE = "www.wnacg.com";
+	
 	private static final String KEY_PHOTO_INDEX = "photos-index-aid-";
 	private static final String KEY_PHOTO_INDEX_PAGE = "photos-index-page-[0-9]+-aid-";
+	
 	private static final String KEY_PHOTO_VIEW = "photos-view-id-";
+	private static final String KEY_PHOTO_VIEW2 = "?ctl=photos&act=view&id=";
+	
 	private static final String KEY_DOWNLOAD_BUTTON = "a[class=down_btn]";
 
 	@Override
@@ -41,7 +45,8 @@ public class WacgnParser implements Parser {
 	@Override
 	public boolean isComicImagePage(String url) {
 		String keyword = "http://" + WEBSITE + "/" + KEY_PHOTO_VIEW;
-		return url.contains(keyword);
+		String keyword2 = "http://" + WEBSITE + "/" + KEY_PHOTO_VIEW2;
+		return url.contains(keyword) || url.contains(keyword2);
 	}
 
 	@Override

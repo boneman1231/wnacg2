@@ -9,7 +9,7 @@ public class Configuration {
 
 	//final
 	public static int retryCount = 3;
-	public static int threadNum = 10;
+	public static int threadNum = 3; //10
 	public static int connectTimeout = (int) MILLISECONDS.convert(30000, SECONDS); //10000
 	public static int readTimeout = (int) MILLISECONDS.convert(30000, SECONDS); //10000
 //	public static int sleepTime = (int) MILLISECONDS.convert(50, MILLISECONDS); 

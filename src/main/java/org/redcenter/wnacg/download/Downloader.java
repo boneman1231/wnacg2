@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import org.redcenter.wnacg.Parser;
 
@@ -61,6 +62,11 @@ public class Downloader
         if (service != null)
         {
             service.shutdown(); // close thread pool
+            try {
+				service.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
         }
     }
 }
